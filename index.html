@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mauli Group of Institutions | COET Shegaon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f8fb;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(to right, #bbc7d6, #eaefdd);
+      color: rgb(24, 160, 197);
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+    header img {
+      width: 200px;
+      margin-bottom: 100px;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    header h2 {
+      font-weight: 400;
+    }
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #004aad;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00c6ff;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #004aad;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-left: 6px solid #004aad;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    li:hover {
+      transform: translateX(8px);
+    }
+    footer {
+      background: #004aad;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+    }
+    footer a{
+      color: rgb(161, 103, 74);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://tse2.mm.bing.net/th?id=OIP.fzHEjQONA3sMwaIEuXkJeQAAAA&pid=Api&P=0&h=180" alt="" />
+    <h1>Mauli Group of Institutions</h1>
+    <h2>College of Engineering and Technology Shegaon</h2>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Welcome to Mauli COET Shegaon</h2>
+    <p>Empowering the future through innovation and education.</p>
+  </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <ul>
+      <li>Campus Placement 2023-24: 101+</li>
+      <li>Campus Placement 2022-23: 107+</li>
+    </ul>
+  </section>
+
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <ul>
+      <li>Computer Science Engineering</li>
+      <li>Mechanical Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Information Technology</li>
+      <li>Civil Engineering</li>
+      <li>Electronics and Telecommunications</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: anandnakhate545@gmail.com | Phone: 7498269127</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mauli Group of Institutions. All rights ... <br> <a href="https://mysanjivani.edupluscampus.com/">Visit Official Student login</a></p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const options = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
